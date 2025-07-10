@@ -6,6 +6,12 @@ import Link from "next/link";
 import React, { useState } from "react";
 
 /**
+ * Motion-enabled components for animations throughout the navbar.
+ */
+const MotionUl = motion.create("ul");
+const MotionLi = motion.create("li");
+
+/**
  * NavbarProps interface for future extensibility.
  */
 export interface NavbarProps {
@@ -162,14 +168,14 @@ export const Navbar: React.FC<NavbarProps> = ({
               </svg>
             </button>
           </div>
-          <motion.ul
+          <MotionUl
             initial="closed"
             animate={open ? "open" : "closed"}
             variants={listVariants}
             className="flex flex-col gap-2"
           >
             {links.map((link) => (
-              <motion.li key={link.href} variants={itemVariants} className="">
+              <MotionLi key={link.href} variants={itemVariants} className="">
                 <Link
                   href={link.href}
                   className="btn btn-ghost w-full justify-start text-left"
@@ -179,9 +185,9 @@ export const Navbar: React.FC<NavbarProps> = ({
                 >
                   {link.label}
                 </Link>
-              </motion.li>
+              </MotionLi>
             ))}
-          </motion.ul>
+          </MotionUl>
         </aside>
       </div>
     </div>

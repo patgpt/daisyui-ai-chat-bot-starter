@@ -5,6 +5,11 @@ import { motion } from "motion/react";
 import React from "react";
 
 /**
+ * Motion-enabled button component for animations throughout the site.
+ */
+const MotionButton = motion.create("button");
+
+/**
  * Button variants using CVA for better type safety and maintainability.
  */
 const buttonVariants = cva(
@@ -114,7 +119,7 @@ export const Button: React.FC<ButtonProps> = ({
   "aria-label": ariaLabel,
 }) => {
   return (
-    <motion.button
+    <MotionButton
       className={buttonVariants({
         variant,
         size,
@@ -132,7 +137,7 @@ export const Button: React.FC<ButtonProps> = ({
       transition={{ type: "spring", stiffness: 400, damping: 17 }}
     >
       {children}
-    </motion.button>
+    </MotionButton>
   );
 };
 

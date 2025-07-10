@@ -5,6 +5,11 @@ import { motion } from "motion/react";
 import React from "react";
 
 /**
+ * Motion-enabled input component for animations throughout the site.
+ */
+const MotionInput = motion.create("input");
+
+/**
  * Input variants using CVA for better type safety and maintainability.
  */
 const inputVariants = cva(
@@ -120,7 +125,7 @@ export const Input: React.FC<InputProps> = ({
   autoComplete,
 }) => {
   return (
-    <motion.input
+    <MotionInput
       className={inputVariants({
         variant,
         size,
