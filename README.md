@@ -178,6 +178,130 @@ bun dev
 GROQ_API_KEY=your_groq_api_key_here
 ```
 
+## 📚 Storybook
+
+This project includes a comprehensive **Storybook** setup for component development, testing, and documentation.
+
+### 🎨 Design System Documentation
+
+Storybook serves as our living design system documentation, featuring:
+
+- **Component Library** - All atoms, molecules, and organisms
+- **Interactive Examples** - Live component playground
+- **Theme Switching** - Test all 32 DaisyUI themes
+- **Responsive Testing** - Mobile, tablet, and desktop viewports
+- **Accessibility Testing** - Built-in a11y validation
+- **Motion Showcase** - Animation demonstrations
+
+### 🚀 Running Storybook
+
+```bash
+# Start Storybook development server
+bun storybook
+
+# Build Storybook for production
+bun build-storybook
+```
+
+Storybook will be available at `http://localhost:6006`
+
+### 🧩 Component Categories
+
+#### 🔬 Atoms
+
+- **Button** - Interactive elements with CVA variants
+- **Input** - Form inputs with validation states
+- **Link** - Navigation with Next.js integration
+
+#### 🧬 Molecules
+
+- **Footer** - Copyright and author information
+
+#### 🦠 Organisms
+
+- **Navbar** - Responsive navigation with mobile drawer
+
+### 🎭 Interactive Features
+
+#### Theme Switching
+
+Use the theme selector in the Storybook toolbar to preview components across all DaisyUI themes:
+
+- Light themes: light, cupcake, emerald, corporate, etc.
+- Dark themes: dark, synthwave, dracula, night, etc.
+
+#### Responsive Testing
+
+Switch between viewport sizes to test responsive behavior:
+
+- **Mobile**: 375px width
+- **Tablet**: 768px width
+- **Desktop**: 1440px width
+
+#### Accessibility Testing
+
+Built-in a11y addon automatically checks for:
+
+- Color contrast ratios
+- Keyboard navigation
+- ARIA attributes
+- Semantic HTML structure
+
+### 🎯 Story Patterns
+
+All stories follow consistent patterns:
+
+```typescript
+import type { Meta, StoryObj } from "@storybook/nextjs";
+import { Component } from "./Component.client";
+
+const meta = {
+  title: "Atoms/Component",
+  component: Component,
+  parameters: {
+    layout: "centered",
+    docs: {
+      description: {
+        component: "Component description...",
+      },
+    },
+  },
+  tags: ["autodocs"],
+  argTypes: {
+    variant: {
+      control: "select",
+      options: ["primary", "secondary"],
+    },
+  },
+} satisfies Meta<typeof Component>;
+
+export default meta;
+type Story = StoryObj<typeof meta>;
+
+export const Default: Story = {
+  args: {
+    children: "Default Component",
+  },
+};
+```
+
+### 📖 Auto-Generated Documentation
+
+Storybook automatically generates documentation from:
+
+- **TypeScript types** - Props and interfaces
+- **TSDoc comments** - Component descriptions
+- **Story descriptions** - Usage examples
+- **CVA variants** - Available options
+
+### 🧪 Testing Integration
+
+Storybook integrates with our testing setup:
+
+- **Vitest** - Unit tests for stories
+- **Playwright** - E2E testing
+- **Chromatic** - Visual regression testing
+
 ## 🔧 Development Guidelines
 
 ### Component Creation

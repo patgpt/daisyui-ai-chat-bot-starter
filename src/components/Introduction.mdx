@@ -1,0 +1,230 @@
+import { Meta } from "@storybook/blocks";
+
+<Meta title="Introduction" />
+
+# 🎨 DaisyUI AI Chat Bot Starter Design System
+
+Welcome to the **DaisyUI AI Chat Bot Starter** design system! This comprehensive component library is built with modern web technologies and follows atomic design principles to create beautiful, accessible, and performant user interfaces.
+
+## 🚀 Features
+
+- **🤖 AI-Powered**: Built for AI chat applications with streaming support
+- **🎨 Modern UI**: Beautiful components with DaisyUI styling
+- **📱 Responsive**: Mobile-first design with adaptive layouts
+- **🎭 Smooth Animations**: Motion.create components throughout
+- **🧩 Atomic Design**: Scalable component architecture
+- **⚡ Type-Safe**: CVA-powered component variants
+- **♿ Accessibility**: WCAG compliant with semantic HTML
+- **🌙 Theme Support**: 32 built-in DaisyUI themes
+
+## 🏗️ Architecture
+
+Our design system follows the **Atomic Design** methodology:
+
+### 🔬 Atoms
+
+Basic building blocks that can't be broken down further:
+
+- **Button** - Interactive elements with multiple variants
+- **Input** - Form inputs with validation states
+- **Link** - Navigation elements with Next.js integration
+
+### 🧬 Molecules
+
+Simple combinations of atoms:
+
+- **Footer** - Copyright and author information
+- **SearchBox** - Input with search functionality
+- **FormField** - Input with label and validation
+
+### 🦠 Organisms
+
+Complex components made of molecules and atoms:
+
+- **Navbar** - Navigation bar with mobile drawer
+- **ChatArea** - AI chat interface with streaming
+- **Sidebar** - Navigation sidebar with collapsible sections
+
+### 📄 Templates
+
+Page-level layouts that define structure:
+
+- **MainLayout** - Primary application layout
+- **AuthLayout** - Authentication pages layout
+- **ChatLayout** - Chat-specific layout
+
+## 🎨 Design Tokens
+
+### Colors
+
+We use DaisyUI's semantic color system:
+
+- **Primary**: Main brand color
+- **Secondary**: Supporting brand color
+- **Accent**: Highlight color
+- **Neutral**: Text and backgrounds
+- **Base**: Surface colors
+- **Info/Success/Warning/Error**: Semantic colors
+
+### Typography
+
+- **Font Family**: Inter (system fallback)
+- **Font Sizes**: Tailwind's type scale
+- **Font Weights**: 400, 500, 600, 700
+
+### Spacing
+
+- **Base Unit**: 4px (0.25rem)
+- **Scale**: 1, 2, 3, 4, 6, 8, 12, 16, 20, 24, 32, 40, 48, 64
+
+### Breakpoints
+
+- **Mobile**: 0px - 767px
+- **Tablet**: 768px - 1023px
+- **Desktop**: 1024px+
+
+## 🔧 Tech Stack
+
+### Core Framework
+
+- **Next.js 15** - React framework with App Router
+- **TypeScript** - Type-safe JavaScript
+- **React 19** - Latest React with concurrent features
+
+### Styling & UI
+
+- **Tailwind CSS 4** - Utility-first CSS framework
+- **DaisyUI 5** - Semantic component classes
+- **CVA** - Type-safe component variants
+- **tailwind-merge** - Intelligent class merging
+
+### Animation
+
+- **Motion** - Production-ready motion library
+- **motion.create()** - Consistent animation patterns
+
+### AI & Chat
+
+- **@ai-sdk/react** - React hooks for AI interactions
+- **@ai-sdk/groq** - Fast AI inference
+- **Streaming** - Real-time chat responses
+
+## 🎯 Component Patterns
+
+### CVA Variants
+
+All components use Class Variance Authority for type-safe variants:
+
+```typescript
+const buttonVariants = cva("btn", {
+  variants: {
+    variant: {
+      primary: "btn-primary",
+      secondary: "btn-secondary",
+    },
+    size: {
+      sm: "btn-sm",
+      md: "btn-md",
+      lg: "btn-lg",
+    },
+  },
+  defaultVariants: {
+    variant: "primary",
+    size: "md",
+  },
+});
+```
+
+### Motion.create Pattern
+
+All atoms use `motion.create()` for consistent animations:
+
+```typescript
+const MotionButton = motion.create("button");
+
+// Usage with motion props
+<Button whileHover={{ scale: 1.02 }} whileTap={{ scale: 0.98 }}>
+  Animated Button
+</Button>
+```
+
+### File Naming Convention
+
+- **Client Components**: `ComponentName.client.tsx`
+- **Server Components**: `ComponentName.tsx`
+- **Types**: `ComponentName.types.ts`
+- **Stories**: `ComponentName.stories.tsx`
+- **Barrel Exports**: `index.ts`
+
+## 🌈 Theme System
+
+The design system supports all 32 DaisyUI themes:
+
+**Light Themes**: light, cupcake, bumblebee, emerald, corporate, garden, lofi, pastel, fantasy, wireframe, cmyk, autumn, acid, lemonade, winter
+
+**Dark Themes**: dark, synthwave, retro, cyberpunk, valentine, halloween, forest, aqua, luxury, dracula, business, night, coffee, dim, nord, sunset
+
+Use the theme selector in the Storybook toolbar to preview components in different themes.
+
+## ♿ Accessibility
+
+All components follow WCAG 2.1 AA guidelines:
+
+- **Semantic HTML**: Proper element usage
+- **ARIA attributes**: Screen reader support
+- **Keyboard navigation**: Full keyboard accessibility
+- **Focus management**: Visible focus indicators
+- **Color contrast**: Meets AA standards
+- **Motion preferences**: Respects `prefers-reduced-motion`
+
+## 🧪 Testing
+
+Components are tested with:
+
+- **Storybook**: Visual testing and documentation
+- **Vitest**: Unit and integration tests
+- **Playwright**: End-to-end testing
+- **Accessibility**: Automated a11y testing
+
+## 📚 Usage
+
+### Installation
+
+```bash
+bun install
+```
+
+### Development
+
+```bash
+bun dev          # Start Next.js development server
+bun storybook    # Start Storybook development server
+```
+
+### Building
+
+```bash
+bun build                # Build Next.js application
+bun build-storybook     # Build Storybook static site
+```
+
+## 🤝 Contributing
+
+1. Follow atomic design principles
+2. Use TypeScript strict mode
+3. Include accessibility features
+4. Add comprehensive stories
+5. Write TSDoc comments
+6. Test across themes
+
+## 🔗 Resources
+
+- [DaisyUI Documentation](https://daisyui.com/)
+- [Tailwind CSS Documentation](https://tailwindcss.com/)
+- [Motion Documentation](https://motion.dev/)
+- [Next.js Documentation](https://nextjs.org/)
+- [Storybook Documentation](https://storybook.js.org/)
+
+---
+
+**Happy building! 🚀**
