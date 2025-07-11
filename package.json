@@ -1,7 +1,40 @@
 {
-  "name": "r3f-landing-page",
+  "name": "daisyui-ai-chat-bot-starter",
   "version": "0.1.0",
+  "description": "A modern, accessible AI chat application built with Next.js 15, featuring atomic design principles, motion animations, and a beautiful DaisyUI interface.",
   "private": true,
+  "author": {
+    "name": "AGIManifesto",
+    "url": "https://github.com/patgpt"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/patgpt/daisyui-ai-chat-bot-starter.git"
+  },
+  "homepage": "https://github.com/patgpt/daisyui-ai-chat-bot-starter",
+  "bugs": {
+    "url": "https://github.com/patgpt/daisyui-ai-chat-bot-starter/issues"
+  },
+  "keywords": [
+    "nextjs",
+    "typescript",
+    "tailwindcss",
+    "daisyui",
+    "ai",
+    "chat",
+    "chatbot",
+    "groq",
+    "motion",
+    "cva",
+    "atomic-design",
+    "accessibility",
+    "react",
+    "streaming"
+  ],
+  "license": "MIT",
+  "engines": {
+    "node": ">=18.0.0"
+  },
   "scripts": {
     "dev": "next dev --turbopack",
     "build": "next build",

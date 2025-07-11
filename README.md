@@ -9,6 +9,10 @@
 
 A modern, accessible AI chat application built with Next.js 15, featuring atomic design principles, motion animations, and a beautiful DaisyUI interface.
 
+# You can just build things
+
+![Rick](./public/rick.png)
+
 ## 🚀 Features
 
 - **🤖 AI Chat Interface** - Powered by Groq API with streaming responses
