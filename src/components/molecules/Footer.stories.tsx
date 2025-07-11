@@ -1,4 +1,4 @@
-import type { Meta, StoryObj } from "@storybook/nextjs";
+import type { Meta, StoryObj } from "@storybook/nextjs-vite";
 import { Footer } from "./Footer.client";
 
 const meta = {
@@ -57,7 +57,9 @@ export const Minimal: Story = {
   args: {
     copyright: "©",
     author: "Your Company",
+    authorLink: "https://github.com/yourcompany",
     year: 2025,
+    country: "US",
   },
 };
 
@@ -99,6 +101,7 @@ export const WithoutAuthorLink: Story = {
   args: {
     copyright: "Created by",
     author: "Anonymous Developer",
+    authorLink: "#",
     year: 2025,
     country: "🌐",
   },
@@ -128,6 +131,13 @@ export const LongAuthorName: Story = {
 
 // Different countries
 export const DifferentCountries: Story = {
+  args: {
+    copyright: "Created with ❤️ by",
+    author: "Developer",
+    authorLink: "#",
+    year: 2025,
+    country: "🇺🇸",
+  },
   render: () => (
     <div className="space-y-4">
       <Footer
@@ -171,6 +181,13 @@ export const DifferentCountries: Story = {
 
 // Page layout example
 export const InPageLayout: Story = {
+  args: {
+    copyright: "DaisyUI Chat",
+    author: "Your Name",
+    authorLink: "https://github.com/yourusername",
+    year: 2025,
+    country: "🌎",
+  },
   render: () => (
     <div className="flex min-h-screen flex-col">
       <div className="bg-base-200 flex flex-1 items-center justify-center">
