@@ -1,0 +1,214 @@
+name: 🧩 Component Request
+description: Request a new component following atomic design principles
+title: "[Component]: "
+labels: ["component", "enhancement", "needs-design"]
+assignees:
+  - AGIManifesto
+
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thank you for requesting a new component! Please fill out this form to help us design and implement it properly.
+
+  - type: input
+    id: component-name
+    attributes:
+      label: Component Name
+      description: What should this component be called?
+      placeholder: e.g., SearchBox, UserCard, ChatBubble
+    validations:
+      required: true
+
+  - type: dropdown
+    id: component-category
+    attributes:
+      label: Atomic Design Category
+      description: Which category does this component belong to?
+      options:
+        - Atom - Basic building block (Button, Input, Icon)
+        - Molecule - Simple combination (SearchBox, FormField)
+        - Organism - Complex component (Navbar, Header, ChatArea)
+        - Template - Page layout (PageLayout, DashboardLayout)
+    validations:
+      required: true
+
+  - type: textarea
+    id: purpose
+    attributes:
+      label: Component Purpose
+      description: What is the primary purpose of this component? What problem does it solve?
+      placeholder: Describe what this component should do...
+    validations:
+      required: true
+
+  - type: textarea
+    id: composition
+    attributes:
+      label: Component Composition
+      description: What atoms/molecules would this component be composed of? (if applicable)
+      placeholder: |
+        For molecules/organisms, list the atoms/molecules it would contain:
+        - Button atom
+        - Input atom
+        - Icon atom
+        etc.
+
+  - type: textarea
+    id: api-design
+    attributes:
+      label: Proposed API
+      description: What should the component API look like?
+      placeholder: |
+        ```tsx
+        <ComponentName
+          variant="primary" | "secondary"
+          size="sm" | "md" | "lg"
+          disabled?: boolean
+          onAction?: () => void
+        >
+          Content
+        </ComponentName>
+        ```
+      render: tsx
+    validations:
+      required: true
+
+  - type: checkboxes
+    id: variants
+    attributes:
+      label: Required Variants
+      description: What variants should this component support?
+      options:
+        - label: Color variants (primary, secondary, accent, etc.)
+        - label: Size variants (xs, sm, md, lg, xl)
+        - label: State variants (disabled, loading, active, etc.)
+        - label: Style variants (outline, ghost, solid, etc.)
+        - label: Layout variants (horizontal, vertical, grid, etc.)
+
+  - type: checkboxes
+    id: features
+    attributes:
+      label: Required Features
+      description: What features should this component include?
+      options:
+        - label: Motion/animation support
+        - label: Theme compatibility (light/dark)
+        - label: Responsive behavior
+        - label: Keyboard navigation
+        - label: Screen reader support
+        - label: Focus management
+        - label: Custom styling support
+        - label: Event handling
+
+  - type: textarea
+    id: behavior
+    attributes:
+      label: Component Behavior
+      description: Describe how the component should behave and interact.
+      placeholder: |
+        - How should it respond to user interactions?
+        - What animations should it have?
+        - How should it handle different states?
+        - Any special behaviors?
+
+  - type: textarea
+    id: styling
+    attributes:
+      label: Styling Requirements
+      description: What DaisyUI classes or styling approach should be used?
+      placeholder: |
+        - Base DaisyUI classes to use
+        - Color scheme preferences
+        - Spacing and sizing requirements
+        - Any special styling considerations
+
+  - type: checkboxes
+    id: accessibility
+    attributes:
+      label: Accessibility Requirements
+      description: What accessibility features are needed?
+      options:
+        - label: Semantic HTML structure
+        - label: ARIA labels and descriptions
+        - label: Keyboard navigation (Tab, Enter, Space, Arrow keys)
+        - label: Focus indicators
+        - label: Screen reader announcements
+        - label: High contrast support
+        - label: Reduced motion support
+
+  - type: textarea
+    id: examples
+    attributes:
+      label: Usage Examples
+      description: Provide examples of how this component would be used.
+      placeholder: |
+        ```tsx
+        // Basic usage
+        <ComponentName variant="primary">
+          Basic example
+        </ComponentName>
+
+        // Advanced usage
+        <ComponentName
+          variant="secondary"
+          size="lg"
+          onAction={() => console.log('clicked')}
+        >
+          Advanced example
+        </ComponentName>
+        ```
+      render: tsx
+
+  - type: textarea
+    id: design-reference
+    attributes:
+      label: Design Reference
+      description: Any design references, mockups, or inspiration?
+      placeholder: |
+        - Links to design systems
+        - Screenshots of similar components
+        - Figma/Sketch files
+        - etc.
+
+  - type: input
+    id: similar-components
+    attributes:
+      label: Similar Components
+      description: Are there similar components in other libraries we should reference?
+      placeholder: e.g., Ant Design Button, Chakra UI Input, etc.
+
+  - type: dropdown
+    id: priority
+    attributes:
+      label: Priority
+      description: How important is this component?
+      options:
+        - Low - Nice to have
+        - Medium - Would be helpful
+        - High - Important for the project
+        - Critical - Blocking development
+    validations:
+      required: true
+
+  - type: textarea
+    id: additional-context
+    attributes:
+      label: Additional Context
+      description: Any other context or requirements?
+      placeholder: Any additional information...
+
+  - type: checkboxes
+    id: terms
+    attributes:
+      label: Checklist
+      description: Please confirm the following
+      options:
+        - label: I have searched existing components to ensure this doesn't already exist
+          required: true
+        - label: This component follows atomic design principles
+          required: true
+        - label: I understand this will use CVA for variants and motion.create for animations
+          required: true
+        - label: I have considered accessibility requirements
+          required: true

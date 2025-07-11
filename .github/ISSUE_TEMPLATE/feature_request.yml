@@ -1,0 +1,186 @@
+name: 💡 Feature Request
+description: Suggest a new feature or enhancement
+title: "[Feature]: "
+labels: ["feature", "enhancement", "needs-triage"]
+assignees:
+  - AGIManifesto
+
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thank you for suggesting a new feature! Please fill out this form to help us understand your request.
+
+  - type: textarea
+    id: problem
+    attributes:
+      label: Problem Statement
+      description: What problem does this feature solve? What use case does it address?
+      placeholder: Describe the problem or use case...
+    validations:
+      required: true
+
+  - type: textarea
+    id: solution
+    attributes:
+      label: Proposed Solution
+      description: Describe the feature you'd like to see implemented.
+      placeholder: Describe your proposed solution...
+    validations:
+      required: true
+
+  - type: dropdown
+    id: component-category
+    attributes:
+      label: Component Category
+      description: Which component category would this feature belong to?
+      options:
+        - Atom
+        - Molecule
+        - Organism
+        - Template
+        - Utility
+        - Page
+        - API
+        - Other
+    validations:
+      required: true
+
+  - type: input
+    id: component-name
+    attributes:
+      label: Component Name
+      description: What would you call this new component? (if applicable)
+      placeholder: e.g., SearchBox, UserCard, ChatBubble
+
+  - type: checkboxes
+    id: feature-type
+    attributes:
+      label: Feature Type
+      description: What type of feature is this?
+      options:
+        - label: New component
+        - label: Enhancement to existing component
+        - label: New utility function
+        - label: API endpoint
+        - label: Animation/motion enhancement
+        - label: Accessibility improvement
+        - label: Performance optimization
+        - label: Developer experience improvement
+
+  - type: dropdown
+    id: priority
+    attributes:
+      label: Priority
+      description: How important is this feature to you?
+      options:
+        - Low - Nice to have
+        - Medium - Would be helpful
+        - High - Important for my use case
+        - Critical - Blocking my work
+    validations:
+      required: true
+
+  - type: textarea
+    id: alternatives
+    attributes:
+      label: Alternative Solutions
+      description: Have you considered any alternative solutions or workarounds?
+      placeholder: Describe any alternatives you've considered...
+
+  - type: textarea
+    id: design-considerations
+    attributes:
+      label: Design Considerations
+      description: Any specific design requirements or considerations?
+      placeholder: |
+        - Accessibility requirements
+        - Responsive behavior
+        - Theme compatibility
+        - Animation preferences
+        - etc.
+
+  - type: checkboxes
+    id: implementation-areas
+    attributes:
+      label: Implementation Areas
+      description: Which areas would this feature likely affect?
+      options:
+        - label: TypeScript types
+        - label: CVA variants
+        - label: Motion/animations
+        - label: DaisyUI styling
+        - label: Accessibility (ARIA, keyboard navigation)
+        - label: Documentation
+        - label: Testing
+        - label: API integration
+
+  - type: textarea
+    id: api-design
+    attributes:
+      label: API Design (if applicable)
+      description: If this is a component, what would the API look like?
+      placeholder: |
+        ```tsx
+        <NewComponent
+          variant="primary"
+          size="md"
+          onAction={() => {}}
+        >
+          Content
+        </NewComponent>
+        ```
+      render: tsx
+
+  - type: textarea
+    id: examples
+    attributes:
+      label: Usage Examples
+      description: Provide examples of how this feature would be used.
+      placeholder: |
+        ```tsx
+        // Example usage
+        <FeatureComponent prop="value" />
+        ```
+      render: tsx
+
+  - type: textarea
+    id: mockups
+    attributes:
+      label: Mockups/Screenshots
+      description: If applicable, add mockups, screenshots, or visual references.
+      placeholder: Drag and drop images here...
+
+  - type: checkboxes
+    id: accessibility-requirements
+    attributes:
+      label: Accessibility Requirements
+      description: What accessibility features should this include?
+      options:
+        - label: Keyboard navigation support
+        - label: Screen reader compatibility
+        - label: Focus management
+        - label: ARIA attributes
+        - label: High contrast support
+        - label: Reduced motion support
+        - label: Semantic HTML structure
+
+  - type: textarea
+    id: additional-context
+    attributes:
+      label: Additional Context
+      description: Any other context, links, or information that might be helpful.
+      placeholder: Any additional information...
+
+  - type: checkboxes
+    id: terms
+    attributes:
+      label: Checklist
+      description: Please confirm the following
+      options:
+        - label: I have searched existing issues to ensure this is not a duplicate
+          required: true
+        - label: This feature aligns with the project's atomic design principles
+          required: true
+        - label: I understand this feature will follow the established patterns (CVA, motion.create, etc.)
+          required: true

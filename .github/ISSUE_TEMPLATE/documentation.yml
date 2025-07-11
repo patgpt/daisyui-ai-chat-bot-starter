@@ -1,0 +1,112 @@
+name: 📚 Documentation
+description: Suggest improvements to documentation
+title: "[Docs]: "
+labels: ["documentation", "enhancement"]
+assignees:
+  - AGIManifesto
+
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thank you for helping improve our documentation! Please describe what needs to be updated or added.
+
+  - type: dropdown
+    id: doc-type
+    attributes:
+      label: Documentation Type
+      description: What type of documentation needs attention?
+      options:
+        - README.md
+        - CONTRIBUTING.md
+        - Component documentation
+        - API documentation
+        - Code comments (TSDoc)
+        - Usage examples
+        - Installation guide
+        - Development setup
+        - Other
+    validations:
+      required: true
+
+  - type: textarea
+    id: current-issue
+    attributes:
+      label: Current Issue
+      description: What's wrong with the current documentation?
+      placeholder: Describe what's missing, unclear, or incorrect...
+    validations:
+      required: true
+
+  - type: textarea
+    id: proposed-improvement
+    attributes:
+      label: Proposed Improvement
+      description: How should the documentation be improved?
+      placeholder: Describe your suggested changes...
+    validations:
+      required: true
+
+  - type: input
+    id: affected-section
+    attributes:
+      label: Affected Section
+      description: Which specific section or component needs documentation?
+      placeholder: e.g., Button component, CVA setup, motion.create usage
+
+  - type: checkboxes
+    id: improvement-type
+    attributes:
+      label: Improvement Type
+      description: What kind of improvement is needed?
+      options:
+        - label: Add missing information
+        - label: Clarify existing content
+        - label: Fix incorrect information
+        - label: Add code examples
+        - label: Improve organization/structure
+        - label: Add visual aids (diagrams, screenshots)
+        - label: Update outdated information
+
+  - type: textarea
+    id: examples
+    attributes:
+      label: Code Examples
+      description: If applicable, provide code examples that should be included.
+      placeholder: |
+        ```tsx
+        // Example code that should be documented
+        <Component variant="primary" />
+        ```
+      render: tsx
+
+  - type: dropdown
+    id: priority
+    attributes:
+      label: Priority
+      description: How important is this documentation improvement?
+      options:
+        - Low - Minor improvement
+        - Medium - Would help users
+        - High - Important for understanding
+        - Critical - Blocking user adoption
+    validations:
+      required: true
+
+  - type: textarea
+    id: additional-context
+    attributes:
+      label: Additional Context
+      description: Any other context or suggestions?
+      placeholder: Any additional information...
+
+  - type: checkboxes
+    id: terms
+    attributes:
+      label: Checklist
+      description: Please confirm the following
+      options:
+        - label: I have searched existing issues to ensure this is not a duplicate
+          required: true
+        - label: I have reviewed the current documentation
+          required: true
